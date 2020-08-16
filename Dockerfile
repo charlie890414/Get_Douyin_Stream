@@ -15,4 +15,4 @@ RUN useradd douyin
 
 USER douyin
 
-CMD aria2c --conf-path=./aria2.conf -D && python3 find_room.py
+CMD aria2c --conf-path=./aria2.conf -D && python3 main.py
