@@ -1,12 +1,16 @@
 from find_room import find
-from download import download
-from fix_stream import fix
-from merge import merge
+# from download import download
+# from fix_stream import fix
+# from merge import merge
 import asyncio
 import logging
+import os
+from logging.handlers import TimedRotatingFileHandler
 
 FORMAT = '%(asctime)s %(levelname)s: %(message)s'
-logging.basicConfig(level=logging.DEBUG, format=FORMAT)
+if not os.path.exists("log"):
+    os.makedirs("log")
+logging.basicConfig(level=logging.DEBUG, format=FORMAT, handlers=[TimedRotatingFileHandler("./log/doyin", 'D', 1, 10)])
 
 async def start(user_id):
 

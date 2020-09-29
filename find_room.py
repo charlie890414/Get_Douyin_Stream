@@ -16,3 +16,7 @@ async def find(user_id):
     }
 
     return requests.request("POST", url, headers=headers, data=payload).json()
+
+if __name__ == '__main__':
+    if len(sys.argv) and int(sys.argv[1]):
+        asyncio.run(find(sys.argv[1]))
