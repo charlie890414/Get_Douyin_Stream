@@ -1,7 +1,7 @@
 from find_room import find
-# from download import download
-# from fix_stream import fix
-# from merge import merge
+from download import download
+from fix_stream import fix
+from merge import merge
 import asyncio
 import logging
 import os
