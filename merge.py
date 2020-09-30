@@ -11,7 +11,7 @@ async def merge(room_id):
     filename = "%s.txt" % room_id
 
     with open(filename, "w") as fp:
-        for name in os.listdir(room_id + "/fixed"):
+        for name in sorted(os.listdir(room_id + "/fixed")):
             if name.endswith(".ts"):
                 fp.write("file " + room_id + '/fixed/' + name + '\n')
 
